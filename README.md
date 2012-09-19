@@ -17,8 +17,7 @@ Or install it yourself as:
     $ gem install char_counter
 
 ## Usage
-
-TODO: Write usage instructions here
+char_counter yourstring
 
 ## Contributing
 
