@@ -1,20 +1,10 @@
 # CharCounter
 
-TODO: Write a gem description
+Calculate an input string and display the most frequently character and last frequently character. Pick the lowest code points if there is a tie.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'char_counter'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install char_counter
+    $ gem install char_counter --source https://github.com/sfchao/char_counter.git
 
 ## Usage
 char_counter yourstring
