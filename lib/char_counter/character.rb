@@ -26,8 +26,8 @@ module CharCounter
       sort_output_array = output.sort_by {|freq, code_point| freq}
       least_frequent= sort_output_array.first.last.chr
       most_frequent  = sort_output_array.last.last.chr          
-      p "The least frequence char is #{most_frequent}"
-      p "The most frequence char is #{least_frequent}"
+      p "The least frequence char is #{least_frequent}"
+      p "The most frequence char is #{most_frequent}"
       return [most_frequent, least_frequent]
     end
   end
