@@ -1,7 +1,7 @@
 module CharCounter
   class Character
     def self.count()
-      raise ArgumentError.new("Missing Input String") unless ARGV.size > 0
+      raise ArgumentError.new("Missing Input String") if ARGV.empty?
       string = new(ARGV)
       string.count
     end
