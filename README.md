@@ -12,3 +12,8 @@ Calculate an input string and display the most frequently character and last fre
 
 ## Usage
 char_counter yourstring
+
+## Assumptions
+
+  + Case sensitive
+  + Only accept [a-zA-Z]\d

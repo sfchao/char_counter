@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
 require 'char_counter'
-if ARGV.size > 0
-  CharCounter::Character.count
-else
-  p "Please input a string"
-end
+
+CharCounter::Character.count

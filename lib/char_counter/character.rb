@@ -1,12 +1,14 @@
 module CharCounter
   class Character
-    def self.count
+    def self.count()
+      raise ArgumentError.new("Missing Input String") unless ARGV.size > 0
       string = new(ARGV)
       string.count
     end
 
     def initialize(arg)
-      @arg = arg.first
+      @arg = arg.first.gsub(" ","")
+      raise RuntimeError.new("Can't accept special characters") if @arg =~ /\W/
       @characters = Hash.new(0)
     end
 
@@ -22,9 +24,11 @@ module CharCounter
       end
 
       sort_output_array = output.sort_by {|freq, code_point| freq}
-                
-      p "The least frequence char is #{sort_output_array.first.last.chr}"
-      p "The most frequence char is #{sort_output_array.last.last.chr}"
+      least_frequent= sort_output_array.first.last.chr
+      most_frequent  = sort_output_array.last.last.chr          
+      p "The least frequence char is #{most_frequent}"
+      p "The most frequence char is #{least_frequent}"
+      return [most_frequent, least_frequent]
     end
   end
 end
