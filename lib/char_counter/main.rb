@@ -1,6 +1,6 @@
 module CharCounter
-  class Character
-    def self.count()
+  class Main
+    def self.run
       raise ArgumentError.new("Missing Input String") if ARGV.empty?
       string = new(ARGV)
       string.count
@@ -19,13 +19,13 @@ module CharCounter
       p "Characters statistics:"
       output = {}
       @characters.each do |code_point, freq| 
-        puts "#{code_point.chr} occurs #{freq} times"
+        p "#{code_point.chr} occurs #{freq} times"
         output[freq] = code_point if output[freq].nil? or code_point < output[freq]
       end
 
       sort_output_array = output.sort_by {|freq, code_point| freq}
-      least_frequent= sort_output_array.first.last.chr
-      most_frequent  = sort_output_array.last.last.chr          
+      least_frequent = sort_output_array.first.last.chr
+      most_frequent = sort_output_array.last.last.chr          
       p "The least frequence char is #{least_frequent}"
       p "The most frequence char is #{most_frequent}"
       return [most_frequent, least_frequent]

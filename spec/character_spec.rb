@@ -1,23 +1,23 @@
 require 'spec_helper'
 
-describe CharCounter::Character do
+describe CharCounter::Main do
   context "Missing Argument" do
     it "should raise ArgumentError" do
-      expect{ CharCounter::Character.count }.to raise_error(ArgumentError)
+      expect{ CharCounter::Main.run }.to raise_error(ArgumentError)
     end
   end
 
   context "Speicall character as input" do
     it "should raise error" do
       ARGV = ["#d#"]      
-      expect{ CharCounter::Character.count }.to raise_error(RuntimeError)
+      expect{ CharCounter::Main.run }.to raise_error(RuntimeError)
     end
   end
 
   context "Input string: aaabbcccd" do
     before(:each) do
       ARGV = ["aaabbcccd"]
-      @most, @least = CharCounter::Character.count
+      @most, @least = CharCounter::Main.run
     end
     it "should have 'a' for most frequently char" do
       @most.should == "a"
@@ -30,7 +30,7 @@ describe CharCounter::Character do
   context "Input String: zzzzzabbbdA" do
     before(:each) do
       ARGV = ["zzzzzabbbdA"]
-      @most, @least = CharCounter::Character.count
+      @most, @least = CharCounter::Main.run
     end
     it "should have 'z' for most frequently char" do
       @most.should == "z"
@@ -44,7 +44,7 @@ describe CharCounter::Character do
   context "Input String: 'zz xxx yyyy wwww rrrr" do
     before(:each) do
       ARGV = ["zz xxx yyyy wwww rrrr"]
-      @most, @least = CharCounter::Character.count
+      @most, @least = CharCounter::Main.run
     end
     it "should have 'w' for most frequently char" do
       @most.should == "r"

@@ -1,5 +1,5 @@
 require "char_counter/version"
 
 module CharCounter
-  autoload :Character, 'char_counter/character'
+  autoload :Main, 'char_counter/main'
 end

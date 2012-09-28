@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 require 'char_counter'
 
-CharCounter::Character.count
+CharCounter::Main.run
